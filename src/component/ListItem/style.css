@@ -1,0 +1,29 @@
+.list-item {
+  padding: 2rem;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.list-image{
+  width: 340px;
+  height: auto;
+}
+
+.list-item:hover {
+  background-color: #bbb;
+}
+
+.list-item-title {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.list-item-artist,
+.list-item-release-date {
+  margin: 0;
+  font-size: .9rem;
+}
