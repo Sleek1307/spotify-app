@@ -108,31 +108,3 @@ body::-webkit-scrollbar-thumb:hover {
 .badge{
   cursor: pointer;
 }
-
-/* @media (min-width: 600px) {
-  .form-content {
-    width: 50%;
-  }
-
-  .content {
-    width: 50% !important;
-    margin: 0 auto;
-  }
-
-  .content-list {
-    width: 75% !important;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 420px) {
-
-
-  .content-list .card {
-    width: 75% !important;
-  }
-
-  .card-container {
-    justify-content: center !important;
-  }
-} */
