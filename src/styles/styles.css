@@ -83,6 +83,32 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 0 auto;
 }
 
+.form-group{
+  position: relative;
+}
+
+.form-icon--container {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  padding-left: 40px !important;
+}
+
+.form-control:focus{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.badge{
+  cursor: pointer;
+}
+
 /* @media (min-width: 600px) {
   .form-content {
     width: 50%;

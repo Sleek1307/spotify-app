@@ -1,0 +1,48 @@
+.avatar {
+    cursor: pointer;
+    height: 100 !important;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding-right: 10px !important;
+    padding-left: 0 !important;
+    transition: .2s;
+    background-color: #ffffff !important    ;
+}
+
+.avatar:hover {
+    box-shadow: 1px 1px 2px #00000056;
+    background-color: #ececec;
+}
+
+.avatar-img {
+    height: 37.6px;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-list{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.avatar--list-item {
+    padding: 5px 7px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.avatar--list-item:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.avatar-icon {
+    transition: all 0.3s ease;;
+}
+
+.avatar-icon__rotated{
+    rotate: 180deg;
+}
