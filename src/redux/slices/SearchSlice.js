@@ -3,7 +3,7 @@ import { spotifySearchCall } from "../../utils";
 
 export const saveSearch = createAsyncThunk(
   "search/save_search",
-  async ({ searchWord, types, tokenResponse }) => {
+  async ({ searchWord, types, tokenResponse }, {rejectWithValue}) => {
     let response;
     const paramsArray = [
       {
@@ -20,7 +20,11 @@ export const saveSearch = createAsyncThunk(
     try {
       response = await spotifySearchCall(paramsArray, tokenResponse);
 
-      return response;
+      if (response.error) {
+        console.log(response);
+      } else {
+        return response;
+      }
     } catch (error) {
       return error;
     }

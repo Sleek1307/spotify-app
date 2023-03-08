@@ -14,7 +14,7 @@ export const spotifyAuthCall = async (requireParams) => {
       )
       .join("&");
 
-    const spotifyResponse = await apiCall({
+    const response = await apiCall({
       method: "POST",
       url: "https://accounts.spotify.com/api/token",
       body: searchParams,
@@ -23,7 +23,14 @@ export const spotifyAuthCall = async (requireParams) => {
       },
     });
 
-    return await spotifyResponse.json();
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return {
+        error: true,
+        responseFailed: await response.json(),
+      };
+    }
   } catch (error) {
     return error;
   }
@@ -38,7 +45,7 @@ export const spotifySearchCall = async (paramsArray, token) => {
       url.searchParams.append(key, item[key]);
     }
 
-    const spotifyResponse = await apiCall({
+    const response = await apiCall({
       method: "GET",
       url: url,
       headers: {
@@ -46,23 +53,25 @@ export const spotifySearchCall = async (paramsArray, token) => {
       },
     });
 
-    if (!spotifyResponse.ok) {
-      return;
+    if (response.ok) {
+      return await response.json();
+    } else {
+      return {
+        error: true,
+        responseFailed: await response.json(),
+      };
     }
-
-    return await spotifyResponse.json();
   } catch (error) {
     return error;
   }
 };
 
 export const spotifyProfileCall = async (token, endpoints) => {
-
   let urlString = "https://api.spotify.com/v1/me";
   if (endpoints.length > 0) {
-    endpoints.map(endpoint => {
+    endpoints.map((endpoint) => {
       urlString += `/${endpoint}`;
-    })
+    });
   }
 
   const url = new URL(urlString);
@@ -80,8 +89,8 @@ export const spotifyProfileCall = async (token, endpoints) => {
     return await response.json();
   } else {
     return {
-      error: "Algo ha ido mal",
-      responseFailed: await response.json(),
+      error: true,
+      failed: await response.json(),
     };
   }
 };

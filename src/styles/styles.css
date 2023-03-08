@@ -22,6 +22,11 @@ body::-webkit-scrollbar-thumb:hover {
   width: 75%;
 }
 
+a{
+  text-decoration: none !important;
+  color: black !important;
+}
+
 .list-items::-webkit-scrollbar {
   height: 6px !important;
   background: rgb(240, 240, 240) !important;

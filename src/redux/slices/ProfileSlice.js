@@ -3,13 +3,14 @@ import { spotifyProfileCall } from "../../utils";
 
 export const getProfileData = createAsyncThunk(
   "profile/get_profile_data",
-  async ({ spotifyTokenResponse }) => {
+  async ({ spotifyTokenResponse }, { rejectWithValue }) => {
     let response;
 
     response = await spotifyProfileCall(spotifyTokenResponse, []);
 
     if (response.error) {
       console.log(response.error);
+      return rejectWithValue(response.failed);
     } else {
       return response;
     }
@@ -64,7 +65,11 @@ export const getRecentlyPlayedTracks = createAsyncThunk(
 export const profileSlice = createSlice({
   name: "profile",
   initialState: {
-    profileData: null,
+    profileData: {
+      error: null,
+      loading: false,
+      data: null,
+    },
     loading: false,
     profilePlayLists: null,
     recentlyPlayedTracks: null,
@@ -73,13 +78,16 @@ export const profileSlice = createSlice({
   extraReducers: {
     //Datos de perfil
     [getProfileData.pending]: (state) => {
-      state.loading = true;
+      state.profileData.loading = true;
     },
     [getProfileData.fulfilled]: (state, { payload }) => {
-      state.profileData = payload;
-      state.loading = false;
+      state.profileData.data = payload;
+      state.profileData.loading = false;
     },
-    [getProfileData.rejected]: (state) => {},
+    [getProfileData.rejected]: (state, { payload }) => {
+      state.profileData.loading = false;
+      state.profileData.error = payload.error;
+    },
     //Tus albumes
     [getProfilePlayLists.pending]: (state) => {
       state.loading = true;
@@ -94,7 +102,6 @@ export const profileSlice = createSlice({
       state.loading = true;
     },
     [getRecentlyPlayedTracks.fulfilled]: (state, { payload }) => {
-
       state.recentlyPlayedTracks = payload;
       state.loading = false;
     },

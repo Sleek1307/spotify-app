@@ -26,7 +26,13 @@ const Avatar = () => {
     }
   }, [isAuthenticated]);
 
-  if (profileData !== null) {
+  useEffect(() => {
+    if (profileData.error !== null) {
+      navigate("/error")
+    }
+  }, [profileData])
+
+  if (profileData.data !== null) {
     return (
       <OverlayTrigger
         key={"bottom"}
@@ -68,11 +74,11 @@ const Avatar = () => {
           }}
         >
           <img
-            src={profileData?.images[0]?.url}
+            src={profileData.data?.images[0]?.url}
             alt="Imagen de John Doe"
             className="avatar-img"
           />
-          <p className="m-0 fw-bold">{profileData?.display_name}</p>
+          <p className="m-0 fw-bold">{profileData.data?.display_name}</p>
           <i
             className={
               "bi bi-chevron-down px-2 avatar-icon" +
@@ -83,7 +89,14 @@ const Avatar = () => {
       </OverlayTrigger>
     );
   } else {
-    return null;
+    return (
+      <div className="border avatar px-2 py-1 d-flex align-items-center">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p className="m-0 ms-2">Cargando datos</p>
+      </div>
+    );
   }
 };
 

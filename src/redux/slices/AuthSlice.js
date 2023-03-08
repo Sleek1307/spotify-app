@@ -21,9 +21,12 @@ export const refreshAccessToken = createAsyncThunk(
       );
       localStorage.setItem("isAuthenticated", JSON.stringify(true));
 
-      return response;
+      if (response.error) {
+        console.log(response);
+      } else {
+        return response;
+      }
     } catch (error) {
-      console.log(error);
       return error;
     }
   }
@@ -47,7 +50,11 @@ export const login = createAsyncThunk("auth/login", async ({ code }) => {
     );
     localStorage.setItem("isAuthenticated", JSON.stringify(true));
 
-    return response;
+    if (response.error) {
+      console.log(response);
+    } else {
+      return response;
+    }
   } catch (error) {
     return error;
   }
@@ -59,10 +66,10 @@ export const authSlice = createSlice({
     ...initialState,
   },
   reducers: {
-    logout: (state, {payload}) => {
+    logout: (state, { payload }) => {
       state.isAuthenticated = false;
-      state.spotifyTokenResponse = '';
-      state.spotifyRefreshToken = ''
+      state.spotifyTokenResponse = "";
+      state.spotifyRefreshToken = "";
       state.isAuthenticated = false;
     },
   },
