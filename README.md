@@ -21,3 +21,4 @@
 Copia el Client ID, luego da click en show client secret y copialo
 
 8. ![](https://github.com/Sleek1307/spotify-app/blob/main/public/assets/images/Captura%20de%20pantalla%202023-03-08%20192240.png)
+En el archivo .env ingresa los datos como se ve en la imagen
