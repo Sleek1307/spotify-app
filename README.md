@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Como clonar y usar este proyecto de Spotify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Ir a la pagina de Spotify for Developers.
+2. Estando allí debes ir al apartado de Dashboard y si es necesario deberas iniciar sesion.
+3. Da click en Create an App, te saldrá lo siguiente: 
+ 
+ ![](https://developer.spotify.com/assets/createappdialog.png)
+ 
+4. Ingresa los datos solicitados y da click en CREATE, este será el resultado:
+ 
+![](https://developer.spotify.com/assets/app_overview.png)
+ 
+5. Da click en EDIT SETTINGS y esta será la ventana que te aparecerá:
 
-## Available Scripts
+![](https://developer.spotify.com/assets/dashboardeditsettings.png)
 
-In the project directory, you can run:
+6. Agrega el enlace en el apartado de Redirects URIs, en nuestro caso será http://localhost:3000/
 
-### `npm start`
+7. ![](https://developer.spotify.com/assets/app_overview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Copia el Client ID, luego da click en show client secret y copialo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+8. ![](https://github.com/Sleek1307/spotify-app/blob/main/public/assets/images/Captura%20de%20pantalla%202023-03-08%20192240.png)
