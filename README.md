@@ -8,18 +8,18 @@
  
 4. Ingresa los datos solicitados y da click en CREATE, este será el resultado:
  
-![](https://developer.spotify.com/assets/app_overview.png)
+ ![](https://developer.spotify.com/assets/app_overview.png)
  
 5. Da click en EDIT SETTINGS y esta será la ventana que te aparecerá:
 
-![](https://developer.spotify.com/assets/dashboardeditsettings.png)
+ ![](https://developer.spotify.com/assets/dashboardeditsettings.png)
 
 6. Agrega el enlace en el apartado de Redirects URIs, en nuestro caso será http://localhost:3000/
 
-7. ![](https://developer.spotify.com/assets/app_overview.png)
+7. Copia el Client ID, luego da click en show client secret y copialo
 
-Copia el Client ID, luego da click en show client secret y copialo
+ ![](https://developer.spotify.com/assets/app_overview.png)
 
-8. ![](https://github.com/Sleek1307/spotify-app/blob/main/public/assets/images/Captura%20de%20pantalla%202023-03-08%20192240.png)
+8. En el archivo .env ingresa los datos como se ve en la imagen
 
-En el archivo .env ingresa los datos como se ve en la imagen
+ ![](https://github.com/Sleek1307/spotify-app/blob/main/public/assets/images/Captura%20de%20pantalla%202023-03-08%20192240.png)
